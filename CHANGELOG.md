@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Created and implemented startBubbleHead and closeBubbleHead usecases for bubble head package

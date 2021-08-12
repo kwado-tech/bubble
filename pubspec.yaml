@@ -2,6 +2,7 @@ name: bubble
 description: A flutter plugin to enable you launch a bubble while putting your application to background and upon clicking the bubble brings your application back to foreground
 version: 0.0.1
 homepage:
+publish_to: 
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

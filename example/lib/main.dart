@@ -15,7 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   Bubble _bubble = new Bubble();
 
   @override
@@ -30,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     try {
       await _bubble.startBubbleHead();
     } on PlatformException {
-      print('Failed to call stopBubbleHead');
+      print('Failed to call startBubbleHead');
     }
   }
 
