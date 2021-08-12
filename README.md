@@ -101,7 +101,8 @@ Add `service` in application tag
 (Enables dragging bubble to bottom screen to exit)
 - showCloseButton - Defaults to `False`
 (Adds a close button icon to the bubble-head)
+
+
   
-
-
+## [Buy me Coffee](https://www.buymeacoffee.com/dsaved)
 
