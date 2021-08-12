@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:bubble_head/bubble_head.dart';
+import 'package:bubble_head/bubble.dart';
 
 void main() {
   runApp(MyApp());

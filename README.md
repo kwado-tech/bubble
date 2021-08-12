@@ -45,7 +45,9 @@ Add `service` in application tag
 
 ### Note:  To set bubble icon, create `assets/images` folder path and add your png icon with name `icon.png` to the directory (ensure to import assets in your `pubspec.yaml` file)
 
-[![](assets/images/bubble_head_example.gif)](assets/images/bubble_head_example.gif "Bubble-head example")
+**GIF illustration**
+
+[![](example/assets/images/bubble_head_example.gif)](example/assets/images/bubble_head_example.gif "Bubble-head example")
 
 ### Examples
 
