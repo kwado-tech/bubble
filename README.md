@@ -1,22 +1,21 @@
-# bubble
+# bubble_head
 
 
 A flutter plugin to enable you launch a bubble while putting your application to background and upon clicking the bubble brings your application back to foreground
-$~~~~~~~~~~~$
 
 ## Getting Started
 ### Add dependency
 
 ```yaml
     dependencies: 
-        float_bubble_head: ^0.0.1
+        bubble_head: ^0.0.2
 ```
-$~~~~~~~~~~~$
+
 
 ### Add in android-manifest file (**../main/AndroidManifest.xml**)
 
 If you are unsure on where to do this, you can reference the example project AndroidManifest.xml file [here](example/android/app/src/main/AndroidManifest.xml)
-$~~~~~~~~~~~$
+
 
 Add `SYSTEM_ALERT_WINDOW` permission in manifest
 ```xml
@@ -36,17 +35,18 @@ Add `intent-filter` in activity tag
     </intent-filter>
 ```
 
-Add `intent-filter` in application tag
+Add `service` in application tag
 ```xml
     <service
         android:name="com.dsaved.bubblehead.bubble.BubbleHeadService"
         android:enabled="true"
         android:exported="false"/>
 ```
-$~~~~~~~~~~~$
 
 ### Note:  To set bubble icon, create `assets/images` folder path and add your png icon with name `icon.png` to the directory (ensure to import assets in your `pubspec.yaml` file)
-$~~~~~~~~~~~$
+
+[![](assets/images/bubble_head_example.gif)](assets/images/bubble_head_example.gif "Bubble-head example")
+
 ### Examples
 
 **To start bubble**
@@ -65,7 +65,7 @@ $~~~~~~~~~~~$
     }
 ```
 
-**To stop bubble**
+**To stop/close bubble**
 
 ```dart
     Bubble _bubble = new Bubble();
