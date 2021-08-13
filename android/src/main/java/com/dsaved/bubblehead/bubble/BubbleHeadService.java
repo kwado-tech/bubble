@@ -28,7 +28,7 @@ public class BubbleHeadService extends Service implements View.OnClickListener {
     private ImageView remove_image_view;
     private final Point szWindow = new Point();
     private View removeFloatingWidgetView;
-    private static boolean showCloseButton = false, _bounce = true, _dragToClose = true;
+    private static boolean showCloseButton = false, _bounce = true, _dragToClose = true, _sendAppToBackground = true;
     private boolean _continueToSnap = false;
 
     private int x_init_cord, y_init_cord, x_init_margin, y_init_margin;
@@ -49,13 +49,21 @@ public class BubbleHeadService extends Service implements View.OnClickListener {
         _dragToClose = dragToClose;
     }
 
+    public static void sendAppToBackground(Boolean sendAppToBackground) {
+        _sendAppToBackground = sendAppToBackground;
+    }
+
     public static void startService(Context activity, String image) {
         byte[] decodedBytes = Base64.decode(image, Base64.DEFAULT);
         _image = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
-        Intent i = new Intent();
-        i.setAction(Intent.ACTION_MAIN);
-        i.addCategory(Intent.CATEGORY_HOME);
-        activity.startActivity(i);
+
+        // send application to background if this is true
+        if (_sendAppToBackground) {
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_MAIN);
+            i.addCategory(Intent.CATEGORY_HOME);
+            activity.startActivity(i);
+        }
 
         Intent intent = new Intent(activity, BubbleHeadService.class);
         activity.startService(intent);

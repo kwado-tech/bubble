@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      await _bubble.startBubbleHead();
+      await _bubble.startBubbleHead(sendAppToBackground: false);
     } on PlatformException {
       print('Failed to call startBubbleHead');
     }
