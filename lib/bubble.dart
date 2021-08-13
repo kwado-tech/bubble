@@ -19,7 +19,7 @@ class Bubble {
   });
 
   /// puts app in background and shows floaty-bubble head
-  Future<void> startBubbleHead() async {
+  Future<void> startBubbleHead({bool sendAppToBackground = true}) async {
     ByteData bytes = await rootBundle.load('assets/images/icon.png');
     var buffer = bytes.buffer;
     var encodedImage = base64.encode(Uint8List.view(buffer));
@@ -28,6 +28,7 @@ class Bubble {
       "bounce": shouldBounce,
       "showClose": showCloseButton,
       "dragToClose": allowDragToClose,
+      "sendAppToBackground": sendAppToBackground,
     });
   }
 

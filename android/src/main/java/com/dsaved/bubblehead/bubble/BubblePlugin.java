@@ -57,6 +57,9 @@ public class BubblePlugin implements FlutterPlugin, MethodCallHandler, ActivityA
             boolean dragToClose = call.argument("dragToClose");
             BubbleHeadService.dragToClose(dragToClose);
 
+            boolean sendAppToBackground = call.argument("sendAppToBackground");
+            BubbleHeadService.sendAppToBackground(sendAppToBackground);
+
             String imageByte = call.argument("image");
             BubbleHeadService.startService(activity, imageByte);
         } else {

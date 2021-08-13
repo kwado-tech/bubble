@@ -8,7 +8,7 @@ A flutter plugin to enable you launch a bubble while putting your application to
 
 ```yaml
     dependencies: 
-        bubble_head: ^0.0.2
+        bubble_head: ^0.0.4
 ```
 
 
@@ -45,7 +45,9 @@ Add `service` in application tag
 
 ### Note:  To set bubble icon, create `assets/images` folder path and add your png icon with name `icon.png` to the directory (ensure to import assets in your `pubspec.yaml` file)
 
-[![](assets/images/bubble_head_example.gif)](assets/images/bubble_head_example.gif "Bubble-head example")
+**GIF illustration**
+
+[![](example/assets/images/bubble_head_example.gif)](example/assets/images/bubble_head_example.gif "Bubble-head example")
 
 ### Examples
 
@@ -80,6 +82,23 @@ Add `service` in application tag
     }
 ```
 
+You can prevent the default action of putting your application in background when starting `bubble_head` by setting `sendAppToBackground` parameter when starting bubble head (if you choose to use another means of sending your application to background)
+
+```dart
+    Bubble _bubble = new Bubble();
+
+    Future<void> startBubbleHead() async {
+    
+        try {
+            // this will only display the bubble-head without sending the application to background
+            await _bubble.startBubbleHead(sendAppToBackground: false);
+        } on PlatformException {
+            print('Failed to call startBubbleHead');
+        }
+    }
+```
+
+
 **Other parameters**
 (You can choose to tweak **optional** parameters when initializing bubble)
 
@@ -91,6 +110,9 @@ Add `service` in application tag
         this.showCloseButton = false,
     });
 ```
+```dart
+    Bubble().startBubbleHead(sendAppToBackground: true);
+```
 
 **Parameter Definition**
 - shouldBounce - Defaults to `True`
@@ -99,7 +121,8 @@ Add `service` in application tag
 (Enables dragging bubble to bottom screen to exit)
 - showCloseButton - Defaults to `False`
 (Adds a close button icon to the bubble-head)
+- sendAppToBackground - Defaults to `True`
+(Sends application to background)
   
-
-
+## [Buy me a Coffee](https://www.buymeacoffee.com/dsaved)
 
